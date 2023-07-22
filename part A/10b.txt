@@ -1,0 +1,19 @@
+10)
+
+a) My browser only sent 1 HTTP GET request to the server. 
+   The Packet that contained the GET message was packet number 233.
+b) The data was sent in 5 TCP segments to the browser, then reassembled
+c)
+d) My browser sent 3 http GET message requests. One each to each for each of the following: The initial page, the Pearson logo, and the cover of the Pearson book, 5th Edition.
+Initial Page address: 128.119.245.12
+Pearson Logo: 165.193.140.14
+Pearson book, 5th Edition: 128.119.240.90
+e) The browser downloaded the two images in serially. 
+I believe this to be the case because the first image was requested 
+and sent before the second image was requested by the browser. 
+Had they been running in parallel, both files would have been requested then would have returned in the same time period. In this case however,
+ the second image was only requested after the first image came back.
+f)The servers intial response was “401 Authentication Required”
+g)The new field that is now included is the authorization field.
+ This is included because we sent the server a username and password along
+ with our request stating that we were authorized to receive the page.

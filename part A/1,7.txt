@@ -1,0 +1,39 @@
+1) 7)Trace Domain Name Server using packet sniffer and packet analyser.
+
+Steps:
+
+sudo wireshark
+Enter password
+Click on Capture then click on Start
+Search any website
+Go back to wireshark, stop the packets (RED)
+Go back to browser and refresh the page
+Type 'dns' in wireshark and clikc on arrow
+Start wireshark (Blue Button)
+Click Continue without saving
+Click on arrow again
+
+If doesnt work refresh the page
+
+Answers:
+a) UDP (Go to qurey)
+b) Both ans same =>Destination: 53 (Go to query and/or response, click on User Data Protocol(UDP))
+c) i) Write Source and Destination address Ex. 172.1.6.185 8.8.8.8
+   ii) 8.8.8.8 (in cmd type 'nmcli', in that DNS configuration) OOORRR ipconfig 172.1.6.185
+d) type A Standard Query and it doesn’t contain any answers
+e) 2 answers, containing information about the name of the host, the type of address, class etc.
+f) The first SYN packet was sent to 209.173.57.180 which corresponds to the first IP address provided in the DNS response message. 
+   Yes both are same
+g) No
+h) It was sent to 128.238.29.22 which is my default DNS server
+i) The query is of type A and it doesn’t contain any answers
+j) The nameservers are bitsy, strawb and w20ns. We can find their IP addresses if we expand the Additional records field in Wireshark as seen below.
+
+Answers
+mit.edu: type NS, class inet, ns bitsy.mit.edu 
+mit.edu: type NS, class inet, ns strawb.mit.edu 
+mit.edu: type NS, class inet, ns w20ns.mit.edu
+Additional records
+bitsy.mit.edu: type A, class inet, addr 18.72.0.3 
+strawb.mit.edu: type A, class inet, addr 18.71.0.151 
+w20ns.mit.edu: type A, class inet, addr 18.70.0.160

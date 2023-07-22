@@ -1,0 +1,41 @@
+2) 9) DHCP
+
+steps
+
+Terminal 1:
+sudo su
+passw
+wireshark
+eno1
+
+Terminal 2:
+sudo dhclient -r
+passw
+sudo dhclient
+sudo dhclient -r
+
+'bootp' in wireshark
+
+Answers
+a)UDP
+b)DHCP Message Type
+ Request includes a server identifier field
+c)1st set of messages: 0x6fd4f5bb
+ 2nd Set of messages: 0x53a63280
+ Purpose: The transaction ID is different so that the 
+ host can differentiate between different requests made by the user
+d)Discover: 0.0.0.0/255.255.255.255
+  Offer: 192.168.1.1/255.255.255.255
+  Request: 0.0.0.0/255.255.255.255
+  ACK:192.168.1.1/255.255.255.255
+e) 192.168.1.1
+f) My client is offered 192.168.1.10 by the DHCP server.
+   The offer message contains the DHCP address offered by the server
+g) In the example given, the value that indicates there is no relay agent is 0.0.0.0,
+   in the case of my capture, I also have a value for the relay agent of 0.0.0.0 indicating 
+   that I too did not have a relay agent
+h) The purpose of lease time is to tell the client how long they can use the specific IP address 
+   assigned by the server before they will have to be assigned a new one.
+   The lease time in my experiment is 86400 seconds or 1 day
+i) The purpose of the release message is to release the IP address back to the server.
+   There is no verification that the release message has been received by the server.

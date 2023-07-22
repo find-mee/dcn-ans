@@ -1,0 +1,20 @@
+4) http
+
+Steps
+
+Answer:
+a) See carefully. like 1.1
+b) en-US
+c) 200 OK 
+d) We can filter
+messages by http.last_modified and we see that the HTTP response I received for the html
+1 file doesn’t show this field. We do have a http.last_modified field in the favicon response
+however, . This says the favicon was last modified on Feb 25, 2010
+e) Content-length = 209 bytes.
+f) No
+g)  See screenshot of response with Alice’s Adventures...
+h) Yes
+i) As seen in the
+   previous screenshot, we get a HTTP/1.1 304 Not Modified Response.
+   This is much shorter than the full response packet seen previously 
+   which contained all of Alice in Wonderland.

@@ -1,0 +1,14 @@
+2b) steps
+
+examples-> tcp-> tcp-vareient-comparisons.cc   -- copy n paste in scratch
+exapmles-> traffic-controll-> traffic-control.cc -- copy header files n paster in abc.cc
+go to int main() -> change TcpNewReno -> tracing- true -> flow monitor- true
+
+terminal in scratch
+
+cd ..
+./waf --run abc
+
+keep only -> cwnd, on-rtt, on-ssh files
+
+go to cwnd file and take values and plot the graph

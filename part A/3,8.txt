@@ -1,0 +1,45 @@
+3) 8) Trace Internet Protocol and Internet Control Message Protocol using packet sniffer and 
+ packet analyser
+
+Steps:
+
+Terminal 1
+sudo su
+Enter passw
+Type 'wireshark'
+Capture
+Click on Start
+
+Terminal 2
+ping www.google.com
+
+In wireshark Stop it (Red)
+Filter 'icmp' 
+Answer the questions
+
+Answers:
+a) 172.217.174.68
+b) ICMP
+c) Header bytes: 20 
+   Payload bytes: 36 (total length 56 - 20 header bytes = 36)
+d) we do not see any IPv4 fragments
+   Dont fragment: 1, more Fragment: 0, Cannot be fragmented
+e) Identiﬁcation ﬁeld is incrementing
+   Time to live is also incrementing, Header file checksum
+f) 
+• version (IPv4 always used)
+• header length (doesn’t change since we are always using IPv4)
+• source IP (my computer’s IP address doesn’t change)
+• destination IP (usc.edu’s IP address doesn’t change)
+• diﬀerentiated services (same protocol every time)
+• upper layer protocol (same protocol every time)
+• header checksum (veriﬁcation disabled in my tests)
+g) Yes
+h) The Flags bit for more fragments is set, indicating that the datagram has been
+fragmented. Since the fragment offset is 0, we know that this is the first
+fragment. This first datagram has a total length of 1500, including the
+header.
+i)We can tell that this is not the first fragment, since the fragment offset is
+1480. It is the last fragment, since the more fragments flag is not set.
+The IP header fields that changed between the fragments are: total length,
+flags, fragment offset, and checksum.
