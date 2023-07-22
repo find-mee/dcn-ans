@@ -1,6 +1,4 @@
-# if this dosent work, try this link
-## https://github.com/tysondbv/dcn
-<a href = "https://github.com/tysondbv/dcn">click</a>
+## All DCN lab answers
 
 rember that
 ### 5, 1, 9 - same
