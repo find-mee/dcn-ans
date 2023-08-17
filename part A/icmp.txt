@@ -1,4 +1,4 @@
-3) 8) Trace Internet Protocol and Internet Control Message Protocol using packet sniffer and 
+Trace Internet Protocol and Internet Control Message Protocol using packet sniffer and 
  packet analyser
 
 Steps:
