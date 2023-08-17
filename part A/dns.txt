@@ -1,4 +1,4 @@
-1) 7)Trace Domain Name Server using packet sniffer and packet analyser.
+Trace Domain Name Server using packet sniffer and packet analyser.
 
 Steps:
 
