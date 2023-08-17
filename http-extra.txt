@@ -1,5 +1,3 @@
-10)
-
 a) My browser only sent 1 HTTP GET request to the server. 
    The Packet that contained the GET message was packet number 233.
 b) The data was sent in 5 TCP segments to the browser, then reassembled
