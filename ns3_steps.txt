@@ -1,0 +1,72 @@
+Steps:
+
+1 ) Traffic controler:
+
+0. Copy paste traffic controler.cc from traffic control folder in example
+1. Remove void
+2. Change to device01, add node.Get(0), node.Get(1). And copy it again and change to 12
+3. Remove 10 lines from the last line of step 2
+4. Change to interface01, device 01 and 10.1.1.0 and similarly for interface12, device12, 10.1.2.0
+5. In Flow, change to nodes.Get(1), rmt (interface12, GetAdress(1)..)
+6. In Flow onoff....nodes.Get(0))
+7. Delete from unit32...( Below []rxByets...) Till simulator. And after simulator to till return 0
+8. Go to tutorial folder, in third.cc scroll down till end. Copy the Ipv4Global.... And past it above the Flow in abc.cc
+9. From third.cc copy unit32....(above []rxByets) to endl (9 lines) and paste above return 0
+10. Change "Tcp" to "Udp" in int main() of if-statement
+11. nodes.Create(3) below if-else statement of int main()
+
+Run it: 
+1. Open cmd in that folder >>cd ..
+2. ./waf --run abc
+3. ./waf --run abc --vis
+4. Write down the 4 values
+
+
+2 ) Dancing one
+
+0. Tutorial - third.cc , rename it abc.cc
+1. From traffic control.cc copy the last #include... And paste in abc.cc
+2. Delete from UdpEchoServer to last 3 lines simulator
+3. Copy the Flow from traffic control.cc to endl (make sure till there is a if statement or 10000..etc) paste above those 3 lines
+4. Change in Flow - change (socketType...), (nodes.Get(..)) And below tht (simulationTime+0.1) to ("ns3::UdpSocketFactory"...), (csmaNodes.Get(...)) and (10+0.1)
+5. There is one more (socketType...) Change it to ("ns3::UdpSocketFactory"...), And below paragraph code change (interfaces...) To (csmaInterfaces...), (nodes.Get(..)) to (csmaNodes.Get(...)), change below 2 (simulationTime+0.1) to (10+0.1)
+6. Copy Ipv4Global.... From third.cc and paste above Flow
+
+Run it:
+1. cd ..
+2. ./waf --run abc --vis
+
+
+3) Graph one
+
+0. Examples - Tcp - Tcp comparison.cc
+1. Copy n paste it in scratch and rename it to abc.cc
+2. Examples - Traffic controler - traffic control.cc, copy the all #includes... From this file and paste it in abc.cc
+3. In abc.cc int main() change "TcpWestWood" to "TcpReno", bool tracing and flow_monitor: false to true
+4. Run it : cd .., ./waf --run abc, we will get many files in folder, just keep cwnd, rtt, ASCII, ssth and delete rest all files
+5. Copy values from cwnd file and plot graph in Libre office
+
+
+
+4) 4 nodes (red balls)
+
+0. Examples - wireless - wifi-sample-adob.cc, copy and paste in scratch and change its name to abc.cc
+1. Change c.Create(2) to c.Create(4)
+2. There will be 2 lines of 
+positionAlloc -> addVector(0.0,0.0,0.0,0.0) 
+positionAlloc -> addVector(5.0,0.0,0.0,0.0) 
+
+Copy paste them again to make 4 lines and changes applied 
+
+positionAlloc -> addVector(0.0,0.0,0.0,0.0) 
+positionAlloc -> addVector(5.0,0.0,0.0,0.0) 
+positionAlloc -> addVector(10.0,5.0,0.0,0.0) 
+positionAlloc -> addVector(15.0,5.0,0.0,0.0) 
+
+3. From traffic control.cc copy all the #includes and paste it
+4. Flow from traffic control.cc till endl; (that above if statement, before unit32) and paste it before simulator
+5. From copied Flow change all the simulationTime to 10, (interfaces,...) To (i,...), (nodes.Get(..)) To (c.Get(...)) And (socketType,...) To ("UdpSocketFactory',..) do these changes to all 
+
+Run it:
+1. cd ..
+2.  ./waf --run abc --vis
